@@ -620,6 +620,7 @@ footer ul li a:hover{
 
 
 /*respansice*/
+/* Default Styles (Open Menu Button - hidden by default) */
 #open-menu-btn {
     display: none;
     background: none;
@@ -627,10 +628,18 @@ footer ul li a:hover{
     color: var(--normal);
     font-size: 24px;
     cursor: pointer;
-    
 }
 
+/* Medium Screen Container Width */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: var(--container-width-mg);
+    }
+}
+
+/* Consolidated Styles for Small Screens (Max Width: 768px) */
 @media screen and (max-width: 768px) {
+    /* 1. Navigation/Menu Styles */
     #open-menu-btn {
         display: block;
     }
@@ -660,6 +669,7 @@ footer ul li a:hover{
         color: var(--normal);
         border: none;
     }
+
     .nav_menu .dynamic-close-btn {
         font-size: 22px;
         color: var(--normal);
@@ -670,39 +680,16 @@ footer ul li a:hover{
     .container {
         width: var(--container-width-sg);
     }
-}
 
-@media screen and (max-width: 1024px) {
-    .container {
-        width: var(--container-width-mg);
-    }
-}
-/* Default (large screen): image left, text right */
-.header_container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
-/* image style */
-.header_left_img img {
-    width: 400px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-/* Responsive (small screens) */
-@media screen and (max-width: 768px) {
-
+    /* 2. Header Section Styles */
     .header_container {
-        flex-direction: column; /* 🔹 side-by-side → top-bottom */
-        text-align: center;     /* center align text */
+        flex-direction: column;
+        text-align: center;
         gap: 1.5rem;
     }
 
     .header_left_img img {
-        width: 350px; /* 🔹 smaller image for mobile */
+        width: 350px;
         height: auto;
     }
 
@@ -722,189 +709,140 @@ footer ul li a:hover{
         font-size: 14px;
         padding: 8px 16px;
     }
-}
 
-
-
-
-
-
-
-/* ছোট স্ক্রিনে Responsive Effect */
-@media (max-width: 768px) {
+    /* 3. About Section Styles */
     .about_container {
         flex-direction: column;
         text-align: center;
     }
 
     .about_img img {
-        width: 300px;           /* full screen width */
+        width: 300px;
         height: auto;
-      
-            
     }
-    .border_bottom{
-        margin-bottom: 20px;
-        width: 50%;
-        font-size: 20px;
-    }
-
 
     .about_img {
         text-align: center;
     }
 
-
     .about-text {
-        width: 100%;          
-        margin: 0;           
-        padding: 0 1px;      
-        text-align: justify;  
+        width: 100%;
+        margin: 0;
+        padding: 0 1px;
+        text-align: justify;
     }
 
     .about-text h4 {
         line-height: 25px;
         width: 280px;
-        margin-left: -99px;
-        
-        
+        margin-left: -99px; /* Note: This is an unusual negative margin, but kept as requested. */
     }
 
     .about-text .btn {
         display: inline-block;
         margin-top: 16px;
     }
-    
+
+    /* 4. Service Section Styles */
+    .Service_container .cards {
+        flex-direction: column;
+        align-items: center;
+        display: flex; /* Kept to override any previous display settings */
+        justify-content: space-between;
+    }
+
+    .Service_container .card {
+        width: 110%;
+        margin-bottom: 20px;
+    }
+
+    .Service_container h3 {
+        font-size: 18px;
+    }
+
+    .Service_container p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .Service_container a {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .sbox {
+        height: auto;
+        width: 100%;
+    }
+
+    .sbox a {
+        gap: 2px;
+    }
+
+    .Service_container .sbox a {
+        margin-top: -100px; /* Note: This is an unusual negative margin, but kept as requested. */
+    }
+
+    /* 5. Skills Section Styles */
+    .skills_container {
+        flex-direction: column;
+        align-items: center;
+        gap: 21px;
+    }
+
+    .skills_column {
+        width: 90%;
+    }
+
+    #skills h2 {
+        font-size: 18px;
+    }
+
+    /* Common/Shared Styles (border_bottom) */
+    .border_bottom {
+        margin-bottom: 20px;
+        width: 50%;
+        font-size: 20px; /* Note: This is overridden to 18px in the skills section block above, but 20px is kept here as per about section block. */
+    }
+
+    /* 6. Footer Styles */
+    .footer_2,
+    .footer_3 {
+        display: none;
+    }
+
+    .footer_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        text-align: center;
+    }
+
+    .footer_1,
+    .footer_4 {
+        width: 48%;
+    }
+
+    .footer_1 h3,
+    .footer_4 h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .footer_1 ul li a,
+    .footer_4 p {
+        font-size: 14px;
+    }
+
+    .footer_1 ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer_4 .link {
+        display: inline-block;
+        margin: 0 5px;
+    }
 }
-
-
-
-/* Responsive mobile view */
-@media (max-width: 768px) {
-  .Service_container .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .Service_container .card {
-    width: 110%;
-    margin-bottom: 20px;
-  }
-  .Service_container .cards {
-    display: flex;
-    justify-content: space-between;
-    
-  }
-
-  .Service_container h3 {
-    font-size: 18px;
-  }
-
-  .Service_container p {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .Service_container a {
-    display: inline-block;
-    margin-top: 10px;
-  }
-  .sbox{
-    height: auto;
-    width: 100%;
-  }
-  .sbox a{
-    gap: 2px;
-  }
-  .Service_container .sbox a {
-  margin-top: -100px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .skills_container {
-    flex-direction: column;
-    align-items: center;
-    gap: 21px;
-  }
-
-  .skills_column {
-    width: 90%;
-  }
-  .border_bottom{
-    width: 50%;
-    font-size: 18px;
-  }
-
- 
-  
-  #skills h2 {
-    font-size: 18px;
-  }
- 
-}
-
-
-
-
-
-/* Default footer layout (for big screen) */
-.footer_container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-/* Small screen layout */
-@media (max-width: 768px) {
-  /* শুধু menu ও contact থাকবে */
-  .footer_2,
-  .footer_3 {
-    display: none;
-  }
-
-  /* পাশাপাশিভাবে সাজানো */
-  .footer_container {
-    display: flex;
-    flex-direction: row;   /* row মানে পাশাপাশিভাবে */
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    text-align: center;
-  }
-
-  /* Menu ও Contact দুইটি অংশের প্রস্থ নিয়ন্ত্রণ */
-  .footer_1,
-  .footer_4 {
-    width: 48%;
-  }
-
-  .footer_1 h3,
-  .footer_4 h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  .footer_1 ul li a,
-  .footer_4 p {
-    font-size: 14px;
-  }
-
-  /* ছোট স্ক্রিনে spacing ও alignment ঠিক করা */
-  .footer_1 ul {
-    padding: 0;
-    list-style: none;
-  }
-
-  .footer_4 .link {
-    display: inline-block;
-    margin: 0 5px;
-  }
-}
-
-
-
-
-
-
